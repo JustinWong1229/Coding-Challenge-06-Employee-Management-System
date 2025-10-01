@@ -1,20 +1,39 @@
 // Step 2: Creating a Class
-class Employees {
-    constructor (name, deparment) {
+class Employee {
+    constructor (name, department) {
         this.name = name
-        this.deparment = deparment
+        this.department = department
     }
     describe () {
-        `${this.name} works in the ${this.deparment}.`
+      return  `${this.name} works in the ${this.department} department.`;
     }
 } 
 // Step 3: Creating a subclass
-class Manager extends Employees {
-    constructor (name, deparment, teamSize) {
-        super (name, deparment)
+class Manager extends Employee {
+    constructor (name, department, teamSize) {
+        super (name, department)
         this.teamSize = teamSize
     }
     describe () {
-        `${this.name} is the manager for the ${this.deparment} and has a team size of ${this.teamSize}.`
+       return `${this.name} is the manager of the ${this.department} department, and has a team size of ${this.teamSize}.`
     }
+}
+// Step 4: Creating Instances 
+const employees = [
+    new Employee ("Tim", "Finnace"),
+    new Employee ("Jackson","IT"),
+    new Employee ("Jen", "Biology"),
+];
+for (const emp of employees) {
+    console.log(emp.describe());
+    
+}
+const managers = [
+    new Manager ("Rick", "Finnace", 7),
+    new Manager ("Peter", "IT", 5),
+    new Manager ("Adrian", "Biology", 6),
+];
+for (const man of managers) {
+    console.log(man.describe());
+    
 }
