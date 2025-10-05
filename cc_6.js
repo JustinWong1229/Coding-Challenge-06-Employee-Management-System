@@ -19,21 +19,50 @@ class Manager extends Employee {
     }
 }
 // Step 4: Creating Instances 
-const employees = [
-    new Employee ("Tim", "Finnace"),
-    new Employee ("Jackson","IT"),
-    new Employee ("Jen", "Biology"),
-];
-for (const emp of employees) {
-    console.log(emp.describe());
+
+    const emp1 = new Employee ("Tim", "Finace")
+    const emp2 = new Employee ("Jackson","IT")
+    const emp3 = new Employee ("Jen", "Biology")
+
+
     
+
+    const man1 = new Manager ("Rick", "Finace", 7)
+    const man2 = new Manager ("Peter", "IT", 5)
+    const man3 = new Manager ("Adrian", "Biology", 6)
+
+
+// Step 5: Creating another class
+class Company {
+    constructor() {
+        this.employees = []
+
+    }
+    addEmployee(employees) {
+        return this.employees.push(employees)
+    }
+
+    listEmployees() {
+        for (const emp of this.employees) {
+            console.log(emp.describe());
+            
+            
+        }
+    }
 }
-const managers = [
-    new Manager ("Rick", "Finnace", 7),
-    new Manager ("Peter", "IT", 5),
-    new Manager ("Adrian", "Biology", 6),
-];
-for (const man of managers) {
-    console.log(man.describe());
-    
-}
+
+
+
+// Step 6: Instantiating a class
+const company = new Company ()
+company.addEmployee(emp1)
+company.addEmployee(emp2)
+company.addEmployee(emp3)
+company.addEmployee(man1)
+company.addEmployee(man2)
+company.addEmployee(man3)
+
+company.listEmployees();
+
+
+
